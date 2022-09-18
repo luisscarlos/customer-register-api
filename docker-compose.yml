@@ -1,0 +1,37 @@
+version: '3'
+
+services:
+  postgres:
+    image: postgres:12.2
+    hostname: customers-postgres
+    container_name: customers-postgres
+    environment:
+      POSTGRES_DB: customers-postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_USER: postgres
+    ports:
+      - "5432:5432"
+    networks:
+      - customers-development-network
+    volumes:
+      - ./database:/var/lib/customers-postgresql
+      
+  pgadmin:
+    image: dpage/pgadmin4
+    hostname: customers-pgadmin4
+    container_name: customers-pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: "customers@customers.com"
+      PGADMIN_DEFAULT_PASSWORD: "customers"
+    ports:
+      - "9090:80"
+    depends_on:
+      - postgres
+    networks:
+      - customers-development-network
+  
+networks:
+  customers-development-network:
+    driver: bridge
+    
+    
