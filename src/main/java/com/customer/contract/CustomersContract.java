@@ -24,9 +24,13 @@ public interface CustomersContract {
     @PostMapping
     ResponseEntity<Customer> saveCustomer(@Valid @RequestBody CustomerModel customerModel) throws CpfCnpjInvalidException;
 
-    @Operation(summary = "Search customers.")
-    @GetMapping("/{name}")
+    @Operation(summary = "Search customers by name.")
+    @GetMapping("/search/{name}")
     ResponseEntity<List<Customer>> findCustomersByName(@PathVariable String name);
+
+    @Operation(summary = "Search customer by id.")
+    @GetMapping("/{id}")
+    ResponseEntity<Customer> findCustomersById(@PathVariable UUID id);
 
     @Operation(summary = "Delete a customer.")
     @DeleteMapping("/{id}")

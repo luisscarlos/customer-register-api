@@ -40,10 +40,7 @@ public class Customer {
     private String cpfCnpj;
 
     @Column
-    private String rg;
-
-    @Column
-    private String ie;
+    private String rgIe;
 
     @Column
     private Boolean active;
@@ -56,8 +53,7 @@ public class Customer {
         this.name = customerModel.getName();
         this.customerType = customerModel.getCustomerType().getDescription();
         this.cpfCnpj = customerModel.getCpfCnpj();
-        this.rg = customerModel.getRg();
-        this.ie = customerModel.getIe();
+        this.rgIe = customerModel.getRgIe();
         this.active = customerModel.getActive();
         this.phone = customerModel.getPhoneList();
 

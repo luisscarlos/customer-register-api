@@ -29,11 +29,8 @@ public class CustomerModel {
     @NotEmpty(message = "Campo obrigatório: cpfCnpj")
     private String cpfCnpj;
 
-    @JsonProperty("rg")
-    private String rg;
-
-    @JsonProperty("ie")
-    private String ie;
+    @JsonProperty("rgIe")
+    private String rgIe;
 
     @JsonProperty("active")
     private Boolean active;

@@ -64,7 +64,12 @@ public class CustomerService {
         customerToEdit.setId(id);
         customerToEdit.setCreated(LocalDateTime.now());
         customerToEdit.setCustomerType(customerById.getCustomerType());
-        customerToEdit.setPhone(customerById.getPhone());
+//        customerToEdit.setPhone(customerById.getPhone());
         return repository.save(customerToEdit);
+    }
+
+    public Customer findCustomerById(UUID id) {
+        return repository.findById(id)
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Cliente não localizado: ID " + id));
     }
 }

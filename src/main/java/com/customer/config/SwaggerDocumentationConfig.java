@@ -23,7 +23,7 @@ public class SwaggerDocumentationConfig {
 
         return new OpenAPI()
                 .info(new Info().title("Customers microservice")
-                        .description("Service to manipulate customers.")
+                        .description("Service to handle customers.")
                         .version("v0.0.1")
                         .license(new License().name("Apache 2.0").url("http://www.apache.org/licenses/LICENSE-2.0.html")));
     }

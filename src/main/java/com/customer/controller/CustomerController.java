@@ -38,6 +38,11 @@ public class CustomerController implements CustomersContract {
     }
 
     @Override
+    public ResponseEntity<Customer> findCustomersById(UUID id) {
+        return new ResponseEntity<Customer>(service.findCustomerById(id), HttpStatus.OK);
+    }
+
+    @Override
     public void deleteCustomer(UUID id) {
         service.deleteCustomer(id);
     }
