@@ -1,0 +1,139 @@
+{
+	"info": {
+		"_postman_id": "c7cbe4fc-8783-4e6f-85e4-edd02957e5e8",
+		"name": "Customers Register",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13993903"
+	},
+	"item": [
+		{
+			"name": "saveCustomers",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"Customer test\",\r\n    \"type\":\"PJ\",\r\n    \"cpfCnpj\":\"99999219339999\",\r\n    \"rg\":\"3939392039222\",\r\n    \"ie\":\"\",\r\n    \"active\":true,\r\n    \"phoneList\": [\r\n        {\r\n            \"phone\":\"859999999999\"\r\n        },\r\n        {\r\n            \"phone\":\"343423433432\"\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/customer",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"customer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Filter Customers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/customer/C",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"customer",
+						"C"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Customer By ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/customer/C",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"customer",
+						"C"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Customer",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/customer/92c794c5-19fc-4bc9-99e6-6d6c52571d90",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"customer",
+						"92c794c5-19fc-4bc9-99e6-6d6c52571d90"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all customers",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Edit Customer",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"name\": \"Customer test\",\r\n        \"customerType\": \"PESSOA JURÍDICA\",\r\n        \"cpfCnpj\": \"22222222222\",\r\n        \"rg\": \"3939392039222\",\r\n        \"ie\": \"\",\r\n        \"active\": false,\r\n        \"phone\": [\r\n            {\r\n                \"phone\": \"859999999733\"\r\n            },\r\n            {\r\n                \"phone\": \"343423433432\"\r\n            }\r\n        ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/customer",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"customer"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
